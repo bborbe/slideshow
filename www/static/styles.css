@@ -1,15 +1,58 @@
-body {
-	background-color: #BEBEBE;
+* {
+	margin: 0;
+	padding: 0;
 }
 
-section{
+body {
+	background-color: #BEBEBE;
+	font-family: 'Open Sans', Arial, sans-serif;
+
+	height: 100%;
+	min-height: 740px;
+
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+section {
+	height: 740px;
+	width: 10000px;
 }
 
 article {
+	border-radius: 40px;
 	background-color: #FFFFFF;
 	width: 1100px;
-	height: 700px;
+	height: 660px;
 	padding: 40px 60px;
 	margin-right: 50px;
 	display: inline-block;
+}
+
+h1 {
+	margin: 0px;
+	font-size: 60px;
+	line-height: 60px;
+}
+
+h2 {
+	margin: 0px;
+	font-size: 45px;
+	line-height: 45px;
+}
+
+h3 {
+	margin: 0px;
+	font-size: 30px;
+	line-height: 30px;
+}
+
+p {
+	font-size: 26px;
+	line-height: 36px;
+}
+
+pre {
+  font-family: 'Droid Sans Mono', 'Courier New', monospace;
+  color: black;
 }
