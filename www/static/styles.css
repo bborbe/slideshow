@@ -9,6 +9,7 @@ body {
 
 	min-height: 690px;
 	min-width: 1024px;
+	height: 100%;
 
 	overflow-x: hidden;
 	overflow-y: hidden;
