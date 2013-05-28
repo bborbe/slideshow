@@ -12,10 +12,16 @@ if (window.attachEvent) {
 		window.onload = slideInit;
 	}
 }
-var slideCurrent;
+
+function getSlideCurrent() {
+	return parseInt(location.hash.substr(1)) || 0
+}
+
+function setSlideCurrent(pos) {
+	location.hash = pos
+}
 
 function slideInit() {
-	slideCurrent = 0;
 	var articles = document.getElementsByTagName("article")
 	slideAddClasses(articles);
 	document.onkeyup = slideKeyPress;
@@ -33,19 +39,19 @@ function slideKeyPress(e) {
 }
 
 function slidePrevious() {
-	if (slideCurrent > 0) {
+	if (getSlideCurrent() > 0) {
 		var articles = document.getElementsByTagName("article")
 		slideRemoveClasses(articles);
-		slideCurrent--;
+		setSlideCurrent(getSlideCurrent() - 1);
 		slideAddClasses(articles);
 	}
 }
 
 function slideNext(articles) {
 	var articles = document.getElementsByTagName("article")
-	if (slideCurrent < articles.length - 1) {
+	if (getSlideCurrent() < articles.length - 1) {
 		slideRemoveClasses(articles);
-		slideCurrent++;
+		setSlideCurrent(getSlideCurrent() + 1);
 		slideAddClasses(articles);
 	}
 }
@@ -67,19 +73,18 @@ function slideRemoveClasses(articles) {
 }
 
 function slideAddClass(articles, offset, className) {
-	var pos = slideCurrent + offset;
+	var pos = getSlideCurrent() + offset;
 	if (pos >= 0 && pos < articles.length) {
 		articles[pos].classList.add(className);
 	}
 }
 
 function slideRemoveClass(articles, offset, className) {
-	var pos = slideCurrent + offset;
+	var pos = getSlideCurrent() + offset;
 	if (pos >= 0 && pos < articles.length) {
 		articles[pos].classList.remove(className);
 	}
 }
-
 
 function log(message) {
 	window.console && console.log && console.log(message);
