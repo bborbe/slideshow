@@ -15,8 +15,6 @@ body {
 }
 
 section {
-	height: 740px;
-	width: 10000px;
 }
 
 article {
@@ -26,7 +24,8 @@ article {
 	height: 660px;
 	padding: 40px 60px;
 	margin-right: 50px;
-	display: inline-block;
+	position: absolute;
+	display: none;
 }
 
 h1 {
@@ -53,6 +52,30 @@ p {
 }
 
 pre {
-  font-family: 'Droid Sans Mono', 'Courier New', monospace;
-  color: black;
+	font-family: 'Droid Sans Mono', 'Courier New', monospace;
+	color: black;
+}
+
+.far-past {
+	margin-left: -2600px;
+	display: block;
+}
+
+.past {
+	margin-left: -1300px;
+	display: block;
+}
+
+.current {
+	display: block;
+}
+
+.next {
+	margin-left: 1300px;
+	display: block;
+}
+
+.far-next {
+	margin-left: 2600px;
+	display: block;
 }
