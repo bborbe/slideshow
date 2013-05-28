@@ -15,6 +15,7 @@ body {
 }
 
 section {
+
 }
 
 article {
@@ -26,6 +27,9 @@ article {
 	margin-right: 50px;
 	position: absolute;
 	display: none;
+	left: 50%;
+	top: 50%;
+	margin-top: -330px;
 }
 
 h1 {
@@ -57,25 +61,26 @@ pre {
 }
 
 .far-past {
-	margin-left: -2600px;
+	margin-left: -3150px;
 	display: block;
 }
 
 .past {
-	margin-left: -1300px;
+	margin-left: -1850px;
 	display: block;
 }
 
 .current {
 	display: block;
+	margin-left: -550px;
 }
 
 .next {
-	margin-left: 1300px;
+	margin-left: 750px;
 	display: block;
 }
 
 .far-next {
-	margin-left: 2600px;
+	margin-left: 2050px;
 	display: block;
 }
