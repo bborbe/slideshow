@@ -7,13 +7,13 @@ body {
 	background-color: #BEBEBE;
 	font-family: 'Open Sans', Arial, sans-serif;
 
-	height: 100%;
 	min-height: 740px;
 
 	overflow-x: hidden;
 	overflow-y: auto;
 
 	font-size: 26px;
+
 }
 
 section {
@@ -31,6 +31,10 @@ article {
 	top: 50%;
 	margin-top: -370px;
 	margin-left: -610px;
+
+/ / -webkit-overflow-scrolling : touch;
+
+	-webkit-font-smoothing: antialiased;
 
 	transition: transform .3s ease-out;
 	-o-transition: -o-transform .3s ease-out;
@@ -142,3 +146,4 @@ a {
 a:hover {
 	text-decoration: underline;
 }
+

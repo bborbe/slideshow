@@ -1,3 +1,5 @@
+var PM_TOUCH_SENSITIVITY = 15;
+
 if (window.attachEvent) {
 	window.attachEvent('onload', slideInit);
 } else {
@@ -25,7 +27,50 @@ function slideInit() {
 	var articles = document.getElementsByTagName("article")
 	slideAddClasses(articles);
 	slideAddNumbers(articles);
+	document.body.addEventListener('touchstart', slideHandleTouchStart, false);
 	document.onkeyup = slideKeyPress;
+}
+
+function slideHandleTouchStart(event) {
+	if (event.touches.length == 1) {
+		touchDX = 0;
+		touchDY = 0;
+
+		touchStartX = event.touches[0].pageX;
+		touchStartY = event.touches[0].pageY;
+
+		document.body.addEventListener('touchmove', slideHandleTouchMove, true);
+		document.body.addEventListener('touchend', slideHandleTouchEnd, true);
+	}
+}
+
+function slideHandleTouchMove(event) {
+	if (event.touches.length > 1) {
+		slideCancelTouch();
+	} else {
+		touchDX = event.touches[0].pageX - touchStartX;
+		touchDY = event.touches[0].pageY - touchStartY;
+	}
+}
+
+function slideHandleTouchEnd(event) {
+	var dx = Math.abs(touchDX);
+	var dy = Math.abs(touchDY);
+
+	if ((dx > PM_TOUCH_SENSITIVITY) && (dy < (dx * 2 / 3))) {
+		if (touchDX > 0) {
+			slidePrevious();
+		} else {
+			slideNext();
+		}
+	}
+
+	slideCancelTouch();
+}
+
+function slideCancelTouch() {
+	document.body.removeEventListener('touchmove', slideHandleTouchMove, true);
+	document.body.removeEventListener('touchend', slideHandleTouchEnd, true);
 }
 
 function slideAddNumbers(articles) {
@@ -37,14 +82,16 @@ function slideAddNumbers(articles) {
 	}
 }
 
-function slideKeyPress(e) {
-	e = e || window.event;
-	var charCode = e.charCode || e.keyCode;
+function slideKeyPress(event) {
+	event = event || window.event;
+	var charCode = event.charCode || event.keyCode;
 	if (charCode == 37) {
 		slidePrevious();
+		event.preventDefault();
 	}
 	if (charCode == 39) {
 		slideNext();
+		event.preventDefault();
 	}
 }
 
@@ -57,7 +104,7 @@ function slidePrevious() {
 	}
 }
 
-function slideNext(articles) {
+function slideNext() {
 	var articles = document.getElementsByTagName("article")
 	if (slideGetCurrentPosition() < articles.length - 1) {
 		slideRemoveClasses(articles);
@@ -94,4 +141,8 @@ function slideRemoveClass(articles, offset, className) {
 	if (pos >= 0 && pos < articles.length) {
 		articles[pos].classList.remove(className);
 	}
+}
+
+function log(message) {
+	window.console && console.log && console.log(message);
 }
