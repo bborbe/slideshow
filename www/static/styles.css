@@ -127,3 +127,18 @@ ul {
 li {
 	margin-left: 30px;
 }
+
+.number {
+	position: absolute;
+	bottom: 40px;
+	right: 40px;
+}
+
+a {
+	color: #375EAB;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}

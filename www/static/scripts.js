@@ -13,18 +13,28 @@ if (window.attachEvent) {
 	}
 }
 
-function getSlideCurrent() {
-	return parseInt(location.hash.substr(1)) || 0
+function slideGetCurrentPosition() {
+	return parseInt(document.location.hash.substr(1)) - 1 || 0
 }
 
-function setSlideCurrent(pos) {
-	location.hash = pos
+function slideSetCurrentPosition(pos) {
+	document.location.hash = (pos + 1)
 }
 
 function slideInit() {
 	var articles = document.getElementsByTagName("article")
 	slideAddClasses(articles);
+	slideAddNumbers(articles);
 	document.onkeyup = slideKeyPress;
+}
+
+function slideAddNumbers(articles) {
+	for (var i = 0; i < articles.length; ++i) {
+		var numbers = articles[i].getElementsByClassName("number")
+		for (var j = 0; j < numbers.length; ++j) {
+			numbers[j].innerHTML = (i + 1) + " / " + articles.length;
+		}
+	}
 }
 
 function slideKeyPress(e) {
@@ -39,19 +49,19 @@ function slideKeyPress(e) {
 }
 
 function slidePrevious() {
-	if (getSlideCurrent() > 0) {
+	if (slideGetCurrentPosition() > 0) {
 		var articles = document.getElementsByTagName("article")
 		slideRemoveClasses(articles);
-		setSlideCurrent(getSlideCurrent() - 1);
+		slideSetCurrentPosition(slideGetCurrentPosition() - 1);
 		slideAddClasses(articles);
 	}
 }
 
 function slideNext(articles) {
 	var articles = document.getElementsByTagName("article")
-	if (getSlideCurrent() < articles.length - 1) {
+	if (slideGetCurrentPosition() < articles.length - 1) {
 		slideRemoveClasses(articles);
-		setSlideCurrent(getSlideCurrent() + 1);
+		slideSetCurrentPosition(slideGetCurrentPosition() + 1);
 		slideAddClasses(articles);
 	}
 }
@@ -73,19 +83,15 @@ function slideRemoveClasses(articles) {
 }
 
 function slideAddClass(articles, offset, className) {
-	var pos = getSlideCurrent() + offset;
+	var pos = slideGetCurrentPosition() + offset;
 	if (pos >= 0 && pos < articles.length) {
 		articles[pos].classList.add(className);
 	}
 }
 
 function slideRemoveClass(articles, offset, className) {
-	var pos = getSlideCurrent() + offset;
+	var pos = slideGetCurrentPosition() + offset;
 	if (pos >= 0 && pos < articles.length) {
 		articles[pos].classList.remove(className);
 	}
-}
-
-function log(message) {
-	window.console && console.log && console.log(message);
 }

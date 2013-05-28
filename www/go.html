@@ -9,7 +9,7 @@
 <body>
 <section>
 
-	<article>
+	<article style="background-image: url(http://golang.org/doc/gopher/frontpage.png); background-position: right; background-repeat: no-repeat;">
 		<h1>Was ich an Go so toll finde</h1>
 
 		<div class="presenter">
@@ -20,13 +20,18 @@
 	<article>
 		<h3>Warum Go?</h3>
 		<ul>
+			<li>OpenSource</li>
 			<li>Typsicher</li>
+			<li>Garbage-Collection</li>
+			<li>Compiled sehr schnell</li>
 			<li>Weniger ist mehr</li>
 			<li>Performance besser als Java</li>
-			<li>Keine Vererbung aber Interfaces</li>
-			<li>Duck Typing</li>
+			<li>Reflection</li>
+			<li>Sichbarkeiten</li>
+			<li>Keine Vererbung aber Interfaces / Duck Typing</li>
 			<li>Concurrency</li>
 		</ul>
+		<div class="number"></div>
 	</article>
 
 	<article>
@@ -40,6 +45,51 @@ func main() {
 	fmt.Printf("Hello World")
 }
 		</pre>
+		<div class="number"></div>
+	</article>
+
+	<article>
+		<h3>Sichtbarkeit</h3>
+
+		<p>Public:</p>
+		<pre>
+func Add(int a, int b) int {
+	return a + b
+}
+		</pre>
+		<p>Private:</p>
+		<pre>
+func add(int a, int b) int {
+	return a + b
+}
+		</pre>
+		<div class="number"></div>
+	</article>
+
+	<article>
+		<h3>Currency mit Go</h3>
+		<ul>
+			<li>go</li>
+			<li>channels</li>
+			<li>defer</li>
+		</ul>
+
+		<div class="number"></div>
+	</article>
+
+	<article>
+		<h3>Links</h3>
+
+		<ul>
+			<li><a href="http://golang.org/">golang.org</a></li>
+			<li><a href="http://tour.golang.org/#1">A Go Tour</a></li>
+			<li><a href="https://gobyexample.com/">Go by Example</a></li>
+			<li><a href="http://www.golang-book.com/">Golang Book</a></li>
+			<li><a href="https://code.google.com/p/goclipse/">Eclipse-Plugin</a></li>
+			<li><a href="https://github.com/mtoader/google-go-lang-idea-plugin">Intellij-Plugin</a></li>
+		</ul>
+
+		<div class="number"></div>
 	</article>
 
 </section>
