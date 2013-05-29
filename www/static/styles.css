@@ -6,33 +6,31 @@
 body {
 	background-color: #BEBEBE;
 	font-family: 'Open Sans', Arial, sans-serif;
-
-	min-height: 690px;
-	min-width: 1024px;
 	height: 100%;
-
+	width: 100%;
 	overflow-x: hidden;
 	overflow-y: hidden;
-
 	font-size: 26px;
 }
 
 section {
 }
 
-/* ipad 1024×690 */
+/* ipad portrait  : 768  x 900 */
+/* ipad landscape : 1024 x 644 */
 article {
-	border-radius: 40px;
-	background-color: #FFFFFF;
 	width: 1000px;
 	height: 610px;
+	margin-top: -345px;
+	margin-left: -540px;
+
+	border-radius: 40px;
+	background-color: #FFFFFF;
 	padding: 40px 40px;
 	position: fixed;
 	display: none;
 	left: 50%;
 	top: 50%;
-	margin-top: -345px;
-	margin-left: -540px;
 
 	-webkit-font-smoothing: antialiased;
 
@@ -40,6 +38,24 @@ article {
 	-o-transition: -o-transform .3s ease-out;
 	-moz-transition: -moz-transform .3s ease-out;
 	-webkit-transition: -webkit-transform .3s ease-out;
+}
+
+@media screen and (orientation: portrait) {
+	article {
+		width: 768px;
+		height: 920px;
+		margin-top: -500px;
+		margin-left: -424px;
+	}
+}
+
+@media screen and (orientation: landscape) {
+	article {
+		width: 1000px;
+		height: 610px;
+		margin-top: -345px;
+		margin-left: -540px;
+	}
 }
 
 .far-past {
@@ -146,4 +162,3 @@ a {
 a:hover {
 	text-decoration: underline;
 }
-
