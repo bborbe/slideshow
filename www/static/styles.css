@@ -60,18 +60,18 @@ article {
 
 .far-past {
 	display: block;
-	transform: translate(-2400px);
-	-o-transform: translate(-2400px);
-	-moz-transform: translate(-2400px);
-	-webkit-transform: translate3d(-2400px, 0, 0);
+	transform: translate(-2300px);
+	-o-transform: translate(-2300px);
+	-moz-transform: translate(-2300px);
+	-webkit-transform: translate3d(-2300px, 0, 0);
 }
 
 .past {
 	display: block;
-	transform: translate(-1200px);
-	-o-transform: translate(-1200px);
-	-moz-transform: translate(-1200px);
-	-webkit-transform: translate3d(-1200px, 0, 0);
+	transform: translate(-1150px);
+	-o-transform: translate(-1150px);
+	-moz-transform: translate(-1150px);
+	-webkit-transform: translate3d(-1150px, 0, 0);
 }
 
 .current {
@@ -84,18 +84,18 @@ article {
 
 .next {
 	display: block;
-	transform: translate(1200px);
-	-o-transform: translate(1200px);
-	-moz-transform: translate(1200px);
-	-webkit-transform: translate3d(1200px, 0, 0);
+	transform: translate(1150px);
+	-o-transform: translate(1150px);
+	-moz-transform: translate(1150px);
+	-webkit-transform: translate3d(1150px, 0, 0);
 }
 
 .far-next {
 	display: block;
-	transform: translate(2400px);
-	-o-transform: translate(2400px);
-	-moz-transform: translate(2400px);
-	-webkit-transform: translate3d(2400px, 0, 0);
+	transform: translate(2300px);
+	-o-transform: translate(2300px);
+	-moz-transform: translate(2300px);
+	-webkit-transform: translate3d(2300px, 0, 0);
 }
 
 h1 {
