@@ -73,13 +73,105 @@ func add(int a, int b) int {
 		<div class="number"></div>
 	</article>
 
+
+	<article>
+		<h3>Interfaces</h3>
+
+		<p>Interface Definition</p>
+		<pre>
+type ConnectionHandler interface {
+	Process(conn net.Conn)
+}
+		</pre>
+		<p>Implementierung</p>
+		<pre>
+type requesthandler struct {
+}
+
+func newrequesthandler() *requesthandler {
+	rh := new(requesthandler)
+	return rh
+}
+func (r *requesthandler) Process(clientConn net.Conn) {
+}
+		</pre>
+
+		<div class="number"></div>
+	</article>
+
 	<article>
 		<h3>Currency mit Go</h3>
-		<ul>
-			<li>go</li>
-			<li>channels</li>
-			<li>defer</li>
-		</ul>
+				<pre>
+<div style="display: none;">
+	package main
+
+	import "fmt"
+
+</div>
+func main() {
+	go printHello()
+	fmt.Printf("World")
+}
+
+func printHello() {
+	fmt.Printf("Hello ")
+}
+		</pre>
+
+		<p>Wo liegt das Problem?</p>
+
+		<div class="number"></div>
+	</article>
+
+
+	<article>
+		<h3>Channels</h3>
+				<pre>
+<div style="display: none;">
+	package main
+
+	import "fmt"
+
+</div>
+func main() {
+	done := make(chan bool, 1)
+	go printHello(done)
+	<- done
+	fmt.Printf("World")
+}
+
+func printHello(done chan bool) {
+	fmt.Printf("Hello ")
+	done <- true
+}
+		</pre>
+
+		<div class="number"></div>
+	</article>
+
+	<article>
+		<h3>defer</h3>
+				<pre>
+<div style="display: none;">
+	package main
+
+	import "fmt"
+
+</div>
+func main() {
+	done := make(chan bool, 1)
+	go printHello(done)
+	<- done
+}
+
+func printHello(done chan bool) {
+	defer func() {
+		fmt.Printf("World")
+		done <- true
+	}()
+	fmt.Printf("Hello ")
+}
+		</pre>
 
 		<div class="number"></div>
 	</article>

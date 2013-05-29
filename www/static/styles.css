@@ -133,6 +133,7 @@ pre {
 	margin-top: 10px;
 	font-family: 'Droid Sans Mono', 'Courier New', monospace;
 	color: black;
+	tab-size: 2;
 }
 
 .presenter {
