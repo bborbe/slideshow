@@ -25,7 +25,7 @@
 	</article>
 
 	<article>
-		<h3>Warum Go?</h3>
+		<h3>Warum Go / Golang?</h3>
 		<ul>
 			<li>OpenSource</li>
 			<li>Typsicher</li>
@@ -37,6 +37,17 @@
 			<li>Sichbarkeiten</li>
 			<li>Keine Vererbung aber Interfaces / Duck Typing</li>
 			<li>Concurrency</li>
+		</ul>
+		<div class="number"></div>
+	</article>
+
+	<article>
+		<h3>History</h3>
+		<ul>
+			<li>Von Google entwickelt und jetzt unter der BSD-Lizenz OpenSource</li>
+			<li>November 2009 erschienen</li>
+			<li>Seit 2012 in Version 1 stabiel</li>
+			<li>2013 ist Version 1.1 verfügbar</li>
 		</ul>
 		<div class="number"></div>
 	</article>
@@ -95,13 +106,12 @@ func newrequesthandler() *requesthandler {
 func (r *requesthandler) Process(clientConn net.Conn) {
 }
 		</pre>
-
 		<div class="number"></div>
 	</article>
 
 	<article>
 		<h3>Currency mit Go</h3>
-				<pre>
+		<pre>
 <div style="display: none;">
 	package main
 
@@ -117,7 +127,6 @@ func printHello() {
 	fmt.Printf("Hello ")
 }
 		</pre>
-
 		<p>Wo liegt das Problem?</p>
 
 		<div class="number"></div>
@@ -126,7 +135,7 @@ func printHello() {
 
 	<article>
 		<h3>Channels</h3>
-				<pre>
+		<pre>
 <div style="display: none;">
 	package main
 
@@ -145,13 +154,12 @@ func printHello(done chan bool) {
 	done <- true
 }
 		</pre>
-
 		<div class="number"></div>
 	</article>
 
 	<article>
 		<h3>defer</h3>
-				<pre>
+		<pre>
 <div style="display: none;">
 	package main
 
@@ -178,7 +186,6 @@ func printHello(done chan bool) {
 
 	<article>
 		<h3>Links</h3>
-
 		<ul>
 			<li><a target="_blank" href="http://golang.org/">golang.org</a></li>
 			<li><a target="_blank" href="http://tour.golang.org/#1">A Go Tour</a></li>
@@ -188,7 +195,6 @@ func printHello(done chan bool) {
 			<li><a target="_blank" href="https://github.com/mtoader/google-go-lang-idea-plugin">Intellij-Plugin</a></li>
 			<li><a target="_blank" href="https://github.com/bborbe/go">Meine Go Werke</a></li>
 		</ul>
-
 		<div class="number"></div>
 	</article>
 
