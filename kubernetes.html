@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kubernetes Slideshow</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="static/styles.css"/>
+	<script src="static/scripts.js"></script>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<style type="text/css">
+		article:first-of-type, article:last-of-type {
+			background-image: url(data:image/png;base64,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);
+			background-repeat: no-repeat;
+			background-position: 92% 80%;
+		}
+	</style>
+</head>
+<body>
+<section>
+
+	<article>
+		<h1>Was ich an Kubernetes so toll finde</h1>
+
+		<div class="presenter">
+			Benjamin Borbe
+		</div>
+
+	</article>
+
+	<article>
+		<h3>Das ist Kubernetes</h3>
+
+		<p>Kubernetes ist ein Open-Source Container Cluster Manager von Google. Ziel ist es, eine Plattform für die Bereitstellung zu automatisieren, Skalierung und den Betrieb von Anwendungscontainer bereit zustellen.</p>
+
+		<p>Kubernetes basiert auf Docker-Containern und kann auf jeder Plattform laufen die ein Docker-Runtime unterst&uuml;tzen.</p>
+
+		<div class="number"></div>
+	</article>
+
+	<article>
+		<h3>Das n&auml;chste Level</h3>
+		<ul>
+			<li>Abstraktion weg von Rechnern zu Containern</li>
+			<li>Horizontale Skalierung</li>
+		</ul>
+		<div class="number"></div>
+	</article>
+
+	<article>
+		<h3>Bausteine</h3>
+		<ul>
+			<li>Images</li>
+			<li>Pods</li>
+			<li>Replication Controller</li>
+			<li>Services</li>
+			<li>Volumes</li>
+			<li>Volume Claims</li>
+			<li>Secrets</li>
+			<li>Namespaces</li>
+			<li>Daemon Sets</li>
+			<li>Deployments</li>
+			<li>Ingress</li>
+			<li>Service Accounts</li>
+			<li>...</li>
+		</ul>
+		<div class="number"></div>
+	</article>
+
+	<article>
+		<h3>Images mit Docker</h3>
+		<h4>Dockerfile</h4>
+		<pre>
+FROM ubuntu:14.04
+RUN apt-get install --quiet --yes openssh-server
+EXPOSE 22
+CMD ["/usr/sbin/sshd", "-D"]
+		</pre>
+		<h4>Build</h4>
+		<pre>
+docker build --rm=true -t bborbe/ssh .
+		</pre>
+
+		<h4>Upload</h4>
+		<pre>
+docker push bborbe/ssh
+		</pre>
+
+		<div class="number"></div>
+	</article>
+
+	<article>
+		<h3>Pod</h3>
+		<pre>
+apiVersion: v1
+kind: Pod
+metadata:
+  name: static-go-webserver
+spec:
+  containers:
+  - image: bborbe/static-go-webserver:latest
+    name: static-go-webserver
+    ports:
+    - containerPort: 80
+      name: static-go-web
+		</pre>
+		<div class="number"></div>
+	</article>
+
+	<article>
+		<h3>Replication Controller</h3>
+		<pre>
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: static-go-webserver
+spec:
+  replicas: 2
+  selector:
+    app: static-go-webserver
+  template:
+    metadata:
+      labels:
+        app: static-go-webserver
+    spec:
+      containers:
+      - image: bborbe/static-go-webserver:latest
+        name: static-go-webserver
+        ports:
+        - containerPort: 80
+          name: static-go-web
+		</pre>
+		<div class="number"></div>
+	</article>
+
+	<article>
+		<h3>Service</h3>
+		<pre>
+apiVersion: v1
+kind: Service
+metadata:
+  name: static-go-webserver
+spec:
+  ports:
+  - nodePort: 30080
+    port: 8080
+  selector:
+    app: static-go-webserver
+  type: NodePort
+		</pre>
+		<div class="number"></div>
+	</article>
+
+	<article>
+		<h3>Links</h3>
+		<ul>
+			<li><a herf="https://github.com/kubernetes/kubernetes">https://github.com/kubernetes/kubernetes</a></li>
+			<li><a href="http://kubernetes.io/">http://kubernetes.io/</a></li>
+			<li><a href="https://www.youtube.com/watch?v=WwBdNXt6wO4">https://www.youtube.com/watch?v=WwBdNXt6wO4</a></li>
+		</ul>
+		<div class="number"></div>
+	</article>
+
+</section>
+</body>
+</html>
