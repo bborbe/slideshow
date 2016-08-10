@@ -117,6 +117,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: static-go-webserver
+  labels:
+    app: static-go-webserver
 spec:
   containers:
   - image: bborbe/static-go-webserver:latest
@@ -164,7 +166,7 @@ metadata:
 spec:
   ports:
   - nodePort: 30080
-    port: 8080
+    port: 80
   selector:
     app: static-go-webserver
   type: NodePort
